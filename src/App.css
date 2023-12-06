@@ -1,19 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
-
-
-body{
-  background-color: greenyellow;
+@import url("https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Sora:wght@600&display=swap");
+body {
+  background-color: black;
 }
-/* 
-img .logo{
-  width: 12px;
-height: 22px;
-top: 27px;
-left: 166px;
-angle: -180 deg;
-
-} */
-.brand{
-
-  font-family: 'Sora', sans-serif;
+/* //header */
+.brand-icon {
+  width: 22px;
+  height: 22px;
+  margin-top: 27px;
+  margin-left: 166px;
 }
+
+.suffix {
+  margin-bottom: 3px;
+  font-size: 12px;
+  color: black;
+  background-color: #cccccc;
+  padding: 2px;
+  border-radius: 4px;
+  vertical-align:super
+}
+
+.brand-text {
+  font-family: "Sora", sans-serif;
+  font-size: 26px;
+  margin-top: 22px;
+  margin-left: 14px;
+  line-height: 28px;
+}
+
+.body-container{
+  margin-top :160px;
+  color: white;
+}
+  
+ .body-container h1{
+  font-size: xxx-large;
+    letter-spacing: 6px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+
+
+    }
+  
+ .body-container p{
+  font-size: xxx-large;
+    letter-spacing: 1px;
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    padding-top: 4px;
+    color: rgba(255, 255, 255, 0.8);
+    ;
+
+
+
+    }
+  
+    .form-container{
+
+      margin-top: 50px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: space-around;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+     .form-container input {
+        width: 535px;
+        height: 48px;
+        padding: 12px 39px;
+        border-radius: 10000px;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        background-color: rgba(255, 255, 255, 0.5);
+      
+      }
+      .container-button {
+    font-family: 'Inter', sans-serif;
+        font-size: 16px;
+        /* font-weight: bold; */
+        width: 158px;
+        height: 48px;
+        padding: 18px 24px;
+        border-radius: 35px;
+        gap: 10px;
+        color: #ffffff; /* Set text color */
+        background-color: rgba(255, 32, 32, 1);
+        border: none; /* Remove border */
+        cursor: pointer; /* Add a pointer cursor for better user experience */
+      }
+      
+      /* If you want to style the button on hover or focus, you can add the following */
+      .container-button:hover,
+      .container-button:focus {
+        background-color: rgba(220, 0, 0, 1); /* Change background color on hover or focus */
+      }
+      
+      .form-container input::placeholder {
+        font-family: 'Inter', sans-serif;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: 0.1em;
+        text-align: left;
+        padding-left: 20px;
+        color: rgb(114, 108, 108); /* Placeholder text color */
+        background: transparent; /* Background color behind the placeholder text */
+        background-image: url("./assets/tube-icon.png");
+        background-repeat: no-repeat;
+        text-indent: 20px;
+        background-position: center left;
+        background-size: 24px
+      }
+      
+      
+      .logo {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 20px; /* Adjust margin as needed */
+        /* Other styles for your logo */
+      }
+      
+      /* ///request a call back  */
+
+      .request-call-back-btn {
+        padding: 10px 35px;
+        border-radius: 40px;
+        border: 1px solid hsla(0, 0%, 100%, 0.5);
+        color: white;
+        background-color: hsla(0, 0%, 0%, 0.5);
+        font-family: 'Inter', sans-serif;
+        font-size: 15px;
+        font-weight: 400;
+        /* line-height: 24px; */
+        letter-spacing: 0em;
+        text-align: left;
+        margin-top: 18px;
+        background-image: url(/src/assets/call-Icon.png);
+        background-repeat: no-repeat;
+        text-indent: 6px;
+        background-position-x:7%;
+        background-position-y:42%;
+        background-size: 18px;
+
+      }
+      

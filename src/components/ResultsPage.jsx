@@ -37,24 +37,56 @@ function ResultsPage() {
   return (
 
     <div>
-       <header className="mb-8 flex  bg-yellow-200">
-        <img src={brandlogo} alt="Brand Icon" className="logo w-8 h-8" />
-        <h1 className="brand p-2">anchor</h1>
-        <button className="bg-red-500 text-yellow-100">request call back</button>
+        <header className="mb-8 d-flex justify-content-around ">
+          <div className="d-flex">
+
+        <img src={brandlogo} alt="brand-icon" className="brand-icon" />
+        <h1 className="brand-text text-light ">anchors <sup className="suffix">Beta</sup></h1>
+          </div>
+        <button class="request-call-back-btn">Request a Call Back</button>
       </header>
 
-      <form onSubmit={handleSubmit}>
-        <div>
-          <h2>Request a callBack</h2>
-        
-          <input type="text" placeholder="Enter Name"/>
-          <br />
-          <input type="number" placeholder="Mobile Number " />
-          <br />
-          <button type="submit">Request a Call Back</button>
+  <div className="container">
+  <div className="row">
+    {/* Left-side card with two parts */}
+    <div className="col-md-6">
+      <div className="card">
+        <div className="row">
+          {/* First part */}
+          <div className="col-md-6">
+            <div className="card-body">
+              <span>Some text</span>
+              <img src="your-image.jpg" className="card-img-top" alt="Image" />
+              <p className="card-text">Image description</p>
+            </div>
+          </div>
+          {/* Second part */}
+          <div className="col-md-6">
+            <div className="card-body">
+              <h5 className="card-title">Image Title</h5>
+              <p className="card-text">Sub Count: 1000</p>
+              <p className="card-text">Comment Count: 500</p>
+            </div>
+          </div>
         </div>
-      </form>
+      </div>
+    </div>
+    {/* Right-side card */}
+    <div className="col-md-6">
+      <div className="card">
+        <div className="card-body">
+          <h2 className="card-title">Number</h2>
+          <button className="btn btn-primary">Click me</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
+
+
+
+     
     </div>
 
   ) 

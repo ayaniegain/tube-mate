@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import brandlogo from "../assets/brand.png";
-import { youtubeData } from "../constant.js";
+import frame from "../assets/framebg.png";
 import { useNavigate } from "react-router-dom";
 
 // console.log(youtubeData);
@@ -23,34 +23,35 @@ function LandingPage() {
   return (
     <div>
       {/* Header Section */}
-      <header className="mb-8 flex  bg-yellow-200">
+      <header className="mb-8 d-flex">
         {/* Replace 'path/to/your/icon.svg' with the actual path to your brand icon */}
-        <img src={brandlogo} alt="Brand Icon" className="logo w-8 h-8" />
-        <h1 className="brand p-2">anchor</h1>
+        <img src={brandlogo} alt="brand-icon" className="brand-icon" />
+        <h1 className="brand-text text-light ">anchors <sup className="suffix">Beta</sup></h1>
       </header>
       {/* Body Section */}
-      <div className="text-center">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Your Website</h1>
+      <div className="text-center body-container">
+        <h1 className="text-3xl font-bold mb-4">Discover your earning<br/> potential</h1>
         <p className="mb-8">
-          A few words about what makes us awesome. Lorem ipsum dolor sit amet,
-          consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut
-          labore et dolore magna aliqua.
+        Turn your Youtube expertise into a lucrative income <br/>
+through resource sharing
         </p>
         {/* Input and Button Section */}
-        <form onSubmit={handleSubmit} className="flex items-center">
+        <form onSubmit={handleSubmit} className="items-center form-container">
           <input
           required
             type="text"
             value={url}
             onChange={(e)=>setUrl(e.target.value)}
-            placeholder="Your Email"
+            placeholder="enter youtube video link"
             className="rounded-l-lg px-4 py-2 border-white border outline-none bg-black text-white"
           />
-          <button className="bg-orange-500 rounded-r-lg px-6 py-2 text-white" type="submit" >
-            Subscribe
+          <button className=" py-2 text-white container-button" type="submit" >
+          Check Earning
           </button>
         </form>
       </div>
+      <img style={{color:"red"}} src={frame} alt="Logo" className="logo"/>
+
     </div>
   );
 }
