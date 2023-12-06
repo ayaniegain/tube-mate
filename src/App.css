@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@600&display=swap');
+
+
+body{
+  background-color: greenyellow;
+}
+/* 
+img .logo{
+  width: 12px;
+height: 22px;
+top: 27px;
+left: 166px;
+angle: -180 deg;
+
+} */
+.brand{
+
+  font-family: 'Sora', sans-serif;
+}
