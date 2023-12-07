@@ -8,10 +8,11 @@ import correct from "../assets/correct.png";
 
 import { useLocation } from "react-router-dom";
 import { Link, NavLink } from "react-router-dom/dist/index.js";
+import RequestCallBack from "./RequestCallBack.jsx";
 
 function ResultsPage() {
   const { state: videoId } = useLocation();
-
+ 
   let API_KEY = "AIzaSyDT6zgDb9SGp8F2iNASKZBOwsUbK7JWL3s";
 
   const [thumbnails, setThumbnails] = useState({});
@@ -65,6 +66,8 @@ function ResultsPage() {
 
   // console.log(result);
 
+
+
   return (
     <div>
       <header className="mb-8 d-flex justify-content-around ">
@@ -74,7 +77,7 @@ function ResultsPage() {
             anchors <sup className="suffix">Beta</sup>
           </h1>
         </NavLink>
-        <button className="request-call-back-btn"   data-bs-toggle="modal" data-bs-target="#exampleModal">Request a Call Back</button>
+        <RequestCallBack/>
       </header>
 
       <div className="container ">
@@ -200,62 +203,6 @@ function ResultsPage() {
           </tbody>
         </table>
       </div>
-
-      {/* //modal */}
-<div>
-  {/* Button trigger modal */}
-  {/* <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button> */}
-  {/* Modal */}
-  <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div className="modal-dialog">
-      <div className="modal-content">
-        <div className="modal-header ">
-          <h5 className="modal-title " id="exampleModalLabel">Request a callback</h5>
-          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-        </div>
-        <div className="modal-body">
-       <div className=" ">
-  <input type="text" className="form-control" placeholder="Enter Name" aria-label="Username" />
-  <input type="text" className="form-control" placeholder="Enter Number" aria-label="Server" />
-</div>
-
-
-        </div>
-        <div className="modal-footer">
-          <button type="button" className="btn btn-primary">Request a  callback</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-{/* model 2 */}
-{/* 
-<div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div className="modal-dialog">
-      <div className="modal-content">
-      
-        <div className="modal-body">
-          <img src={correct} alt="logo" />
-          <h4>Request a call back</h4>
-          <h6>Our Team will call you shortly in <br/>
-12-24 hrs</h6>
-<h6>Can’t you wait for call?</h6>
-       
-
-
-        </div>
-        <div className="modal-footer">
-          <button type="button" className="btn btn-primary">checking another videos 👉 </button>
-        </div>
-      </div>
-    </div>
-  </div> */}
-
-
-
-</div>
 
 
     </div>
