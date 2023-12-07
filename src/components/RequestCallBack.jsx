@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
+import correct from "../assets/correct.png";
+import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 
 function RequestCallBack() {
-
+  const navigate = useNavigate();
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
+    const [success, setSuccess] = useState(false);
   
   
 
@@ -21,6 +25,8 @@ function RequestCallBack() {
         });
     
         if (response.ok) {
+
+          setSuccess(true)
           alert('Email sent successfully!');
         } else {
           alert('Failed to send email');
@@ -30,41 +36,47 @@ function RequestCallBack() {
       }
     }
 
-
+const handleClick=()=>{
+  navigate("/");
+}
 
   return (
   <div>
         <button className="request-call-back-btn"   data-bs-toggle="modal" data-bs-target="#exampleModal">Request a Call Back</button>
+{
 
-
+        !success ? 
+     
  <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <form  onSubmit={handleSubmit}>
+ <form  onSubmit={handleSubmit}>
 
-   <div className="modal-dialog">
-     <div className="modal-content">
-       <div className="modal-header ">
-         <h5 className="modal-title " id="exampleModalLabel">Request a callback</h5>
-         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
-       </div>
-       <div className="modal-body">
-      <div className=" ">
- <input value={name} onChange={(e)=>setName(e.target.value)} type="text" className="form-control" placeholder="Enter Name" aria-label="Username" />
- <input value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" className="form-control" placeholder="Enter Number" aria-label="Server" />
+<div className="modal-dialog">
+  <div className="modal-content">
+    <div className="modal-header ">
+      <h5 className="modal-title " id="exampleModalLabel">Request a callback</h5>
+      <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
+    </div>
+    <div className="modal-body">
+   <div className=" ">
+<input required value={name} onChange={(e)=>setName(e.target.value)} type="text" className="form-control" placeholder="Enter Name" aria-label="Username" />
+<input required  value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" className="form-control" placeholder="Enter Number" aria-label="Server" />
 </div>
 
 
-       </div>
-       <div className="modal-footer">
-         <button type="submit" className="btn btn-primary">Request a  callback</button>
-       </div>
-     </div>
-   </div>
-   </form>
+    </div>
+    <div className="modal-footer">
+      <button type="submit" className="btn btn-primary">Request a  callback</button>
+    </div>
+  </div>
+</div>
+</form>
 
- </div>
+</div>
 
-{/* model 2 */}
-{/* 
+        
+        :
+
+
 <div className="modal fade" id="exampleModal" tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
    <div className="modal-dialog">
      <div className="modal-content">
@@ -80,11 +92,17 @@ function RequestCallBack() {
 
        </div>
        <div className="modal-footer">
-         <button type="button" className="btn btn-primary">checking another videos 👉 </button>
+         <button type="button" onClick={handleClick} className="btn btn-primary">checking another videos 👉 </button>
        </div>
      </div>
    </div>
- </div> */}
+ </div>
+
+
+}
+
+
+
   </div> 
 
   )

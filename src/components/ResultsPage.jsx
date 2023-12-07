@@ -3,7 +3,6 @@ import axios from "axios";
 import { youtubeData } from "../constant.js";
 import { youtubeSub } from "../constant.js";
 import brandlogo from "../assets/brand.png";
-import correct from "../assets/correct.png";
 // import badge from "../assets/badge.png";
 
 import { useLocation } from "react-router-dom";
