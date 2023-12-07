@@ -90,3 +90,79 @@ https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCWX0cUR2rZcqK
         "resultsPerPage": 1
     }
 }
+
+
+  <div>
+        <button
+          type="button"
+          className="btn btn-primary"
+          data-toggle="modal"
+          data-target="#exampleModal"
+        >
+          Open Modal
+        </button>
+        {/* Modal */}
+        <div
+          className="modal fade"
+          id="exampleModal"
+          tabIndex={-1}
+          role="dialog"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div className="modal-dialog" role="document">
+            <div className="modal-content">
+              <div className="modal-header">
+                <h5 className="modal-title" id="exampleModalLabel">
+                  Modal Title
+                </h5>
+                <button
+                  type="button"
+                  className="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">×</span>
+                </button>
+              </div>
+              <div className="modal-body">
+                {/* Two text input fields */}
+                <div className="form-group">
+                  <label htmlFor="inputField1">Input Field 1</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputField1"
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="inputField2">Input Field 2</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputField2"
+                  />
+                </div>
+              </div>
+              <div className="modal-footer">
+                {/* Button to trigger callback */}
+                <button
+                  type="button"
+                  className="btn btn-primary"
+                  onclick="triggerCallback()"
+                >
+                  Submit
+                </button>
+                <button
+                  type="button"
+                  className="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>   
+      
