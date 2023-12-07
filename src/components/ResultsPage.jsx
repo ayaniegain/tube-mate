@@ -89,15 +89,15 @@ function ResultsPage() {
                 <div className="col-md-6">
                   <div className="card-body d-flex row">
                     <div>
-                      <span className="badge"></span>
-                      <span> top earner video</span>
+                      {/* <span className="badge"></span> */}
+                      <span className="badge"> Top earner video</span>
                     </div>
                     <img
                       src={thumbnails?.snippet?.thumbnails?.default?.url}
                       className="card-img-top"
                       alt="Image"
                     />
-                    <p className="card-text">Uploaded on - {date}</p>
+                    <p className="card-text text-secondary">Uploaded on - {date}</p>
                   </div>
                 </div>
                 {/* Second part */}
