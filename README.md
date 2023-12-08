@@ -41,7 +41,7 @@ npm run dev
 ```
 
 
->>frontend
+>>backend
 ```bash
 npm start
 ```
