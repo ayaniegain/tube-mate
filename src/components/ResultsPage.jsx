@@ -11,8 +11,14 @@ import RequestCallBack from "./RequestCallBack.jsx";
 
 function ResultsPage() {
   const { state: videoId } = useLocation();
+
+
+  
+  var  API_KEY2 = "AIzaSyDwMi2IPvGtSgzB7Fg0IprcWGByVFSYWMU"
+    
+
  
-  let API_KEY = "AIzaSyDT6zgDb9SGp8F2iNASKZBOwsUbK7JWL3s";
+  
 
   const [thumbnails, setThumbnails] = useState({});
   const [date, setDate] = useState("");
@@ -20,17 +26,13 @@ function ResultsPage() {
 
   async function fetchData() {
     try {
-      // let res=await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${API_KEY}` )
-      // https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCWX0cUR2rZcqKei1Vstww-A&key=AIzaSyDT6zgDb9SGp8F2iNASKZBOwsUbK7JWL3s
+      let res=await axios.get(`https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoId}&key=${API_KEY2}` )
+      let sub=await axios.get(` https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCWX0cUR2rZcqKei1Vstww-A&key=${API_KEY2}`)
 
-      // console.log(res.data.items);
-
-      // setResult(res.data.items);
-      // console.log(youtubeData.items[0].snippet.thumbnails.default.url);
-      setThumbnails(youtubeData?.items[0]);
-      // setResult(youtubeData.items.statistics);
+     
+      setThumbnails(res.data?.items[0]);
       //date
-      const originalDate = youtubeData?.items[0].snippet.publishedAt;
+      const originalDate = (res.data)?.items[0].snippet.publishedAt;
       const dateObject = new Date(originalDate);
 
       const options = { year: "numeric", month: "long", day: "numeric" };
@@ -41,13 +43,13 @@ function ResultsPage() {
       // ESTIMATE earning
       // Earnings = min(subscriber count, views) + 10 * comments + 5 * likes
       {
-        let subCount = parseInt(youtubeSub.items[0].statistics.subscriberCount);
-        let viewCount = parseInt(youtubeData?.items[0].statistics?.viewCount);
+        let subCount = parseInt(sub.data.items[0].statistics.subscriberCount);
+        let viewCount = parseInt((res.data)?.items[0].statistics?.viewCount);
 
         let commentCount = parseInt(
-          youtubeData.items[0].statistics?.commentCount
+          (res.data).items[0].statistics?.commentCount
         );
-        let likeCount = parseInt(youtubeData.items[0].statistics?.likeCount);
+        let likeCount = parseInt((res.data).items[0].statistics?.likeCount);
 
         let earnings =
           Math.min(subCount, viewCount) + 10 * commentCount + 5 * likeCount;
@@ -63,8 +65,7 @@ function ResultsPage() {
     fetchData();
   }, []);
 
-  // console.log(result);
-
+  
 
 
   return (
