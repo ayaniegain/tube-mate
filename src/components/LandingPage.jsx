@@ -1,28 +1,59 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import brandlogo from "../assets/brand.png";
 import frame from "../assets/framebg.png";
 import { useNavigate } from "react-router-dom";
+import ProgressBar from "@ramonak/react-progress-bar";
 
-// console.log(youtubeData);
 function LandingPage() {
 
   const navigate = useNavigate();
   let [url,setUrl]=useState("")
+  const [count, setCount] = useState(0);
+  const [isCounting, setIsCounting] = useState(false);
 
+  const handleButtonClick = () => {
+    setIsCounting(true)
+    
+  };
+
+
+
+  useEffect(() => {
+    if (isCounting) {
+      const interval = setInterval(() => {
+        setCount((prevCount) => prevCount + 20);
+
+      
+      }, 1000);
+
+      if (count === 100) {
+        clearInterval(interval);
+  setIsCounting(false)
+
+        const videoId = url.split("v=")[1].split("&")[0];
+        navigate("/results",{state:videoId});
+      }
+
+      return () => clearInterval(interval);
+    }
+  }, [count, isCounting]);
+
+
+
+    let handleSubmit=(event)=>{
+      event.preventDefault()
+
+      handleButtonClick()
+      
+    }
   
-  let handleSubmit=(event)=>{
-    event.preventDefault()
-    
-    
-    const videoId = url.split("v=")[1].split("&")[0];
-    // console.log(videoId);
-    navigate("/results",{state:videoId});
-    
-  }
- 
+     
+
+
   return (
     <div>
       {/* Header Section */}
+      <ProgressBar completed={count} />
       <header className="mb-8 d-flex">
         {/* Replace 'path/to/your/icon.svg' with the actual path to your brand icon */}
         <img src={brandlogo} alt="brand-icon" className="brand-icon" />
