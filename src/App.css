@@ -141,13 +141,12 @@ body {
   background-position-y: 42%;
   background-size: 18px;
 }
-.container{
+.container {
   margin-top: 46px;
-  background-color:rgb(141, 115, 115);
-  
-  ;
+  background: #1e1e1e;
+  max-width: 1079px;
 }
-.badge{
+.badge {
   background-image: url(/src/assets/badge.png);
   background-repeat: no-repeat;
   background-position-x: 7%;
@@ -155,15 +154,37 @@ body {
   background-position-y: 50%;
   background-size: 11px;
   background-color: #707070;
-  ;
-  
-  
 }
 
-.right-container{
+.img {
+  border-radius: 25px;
+}
+.card {
+  background: #1e1e1e;
+}
+.sec-container{
+  margin-top: 60px
+}
+
+.card-body h5 {
+  color: white;
+}
+.card-body p {
+  color: white;
+}
+
+.right-container {
   margin-top: 46px;
-  background-color:rgb(141, 115, 115);
-  
+  width: 400px;
+}
+.right-body {
+  background: #282828;
+  text-align: center;
+  /* width: 350px; */
+  height: 200px;
+  padding-top: 60px;
+  color: white;
+  border-radius: 15px;
 }
 
 .custom-table {

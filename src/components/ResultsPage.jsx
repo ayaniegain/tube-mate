@@ -90,18 +90,18 @@ function ResultsPage() {
                   <div className="card-body d-flex row">
                     <div>
                       {/* <span className="badge"></span> */}
-                      <span className="badge"> Top earner video</span>
+                      <span className="badge p-2"> Top earner video</span>
                     </div>
                     <img
                       src={thumbnails?.snippet?.thumbnails?.default?.url}
-                      className="card-img-top"
+                      className="card-img-top mt-3 img "
                       alt="Image"
                     />
                     <p className="card-text text-secondary">Uploaded on - {date}</p>
                   </div>
                 </div>
                 {/* Second part */}
-                <div className="col-md-6">
+                <div className="col-md-6 sec-container">
                   <div className="card-body">
                     <h5 className="card-title h6">
                       {thumbnails?.snippet?.title}
@@ -124,14 +124,19 @@ function ResultsPage() {
           {/* Right-side card */}
           <div className="col-md-6 right-container">
             <div className="card">
-              <div className="card-body">
+              <div className="card-body right-body">
                 <h2 className="card-title">₹ {earning}</h2>
-                <button className="btn btn-light">check how?</button>
+                <button className="btn btn-light mt-2 rounded-pill ">check how?</button>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div className="text-center mt-6" style={{backgroundColor: 'black', padding: 0, marginTop: 20}}>
+  <h2 style={{color: '#FFFFFFB2', fontSize: "28px"}}>Other Videos Potentials</h2>
+</div>
+
+
 
       {/* //table */}
       <div className="container mt-5">
