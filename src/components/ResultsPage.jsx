@@ -69,17 +69,29 @@ function ResultsPage() {
 
   return (
     <div>
-      <header className="mb-8 d-flex justify-content-around ">
-        <NavLink to={"/"} className="d-flex ">
+      
+      <header className="mb-8">
+  <div className="container">
+    <div className="row align-items-center">
+      <div className="col-5">
+        <NavLink to={"/"} className="d-flex align-items-center">
           <img src={brandlogo} alt="brand-icon" className="brand-icon" />
-          <h1 className="brand-text text-light ">
+          <h1 className="brand-text text-light">
             anchors <sup className="suffix">Beta</sup>
           </h1>
         </NavLink>
-        <RequestCallBack/>
-      </header>
+      </div>
+      <div className="col-6">
+        <div className="d-flex justify-content-end">
+          <RequestCallBack />
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+      
 
-      <div className="container ">
+      <div className="container card-container">
         <div className="row">
           {/* Left-side card with two parts */}
           <div className="col-md-6">
@@ -103,18 +115,27 @@ function ResultsPage() {
                 {/* Second part */}
                 <div className="col-md-6 sec-container">
                   <div className="card-body">
-                    <h5 className="card-title h6">
+                    <h5 className="card-title h6 pb-2">
                       {thumbnails?.snippet?.title}
                     </h5>
-                    <p className="card-text">
+                    <p className="card-text views ">
+                    <span className="text-secondary">
+
                       {thumbnails?.statistics?.viewCount}
+                      </span> 
                     </p>
 
-                    <p className="card-text">
-                      {thumbnails?.statistics?.likeCount}
+                    <p className="card-text likes">
+                    <span className="text-secondary">
+                       {thumbnails?.statistics?.likeCount}
+                      
+                      </span> 
                     </p>
-                    <p className="card-text">
+                    <p className="card-text comm">
+                    <span className="text-secondary">
+
                       {thumbnails?.statistics?.commentCount}
+                      </span> 
                     </p>
                   </div>
                 </div>
@@ -140,73 +161,75 @@ function ResultsPage() {
 
       {/* //table */}
       <div className="container mt-5">
-        <table className="table custom-table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col" style={{ width: 50 }}>
-                Rank
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Title
-              </th>
-              <th scope="col" style={{ width: 100 }}>
-                Thumbnail
-              </th>
-              <th scope="col" style={{ width: 100 }}>
-                Views
-              </th>
-              <th scope="col" style={{ width: 100 }}>
-                Likes
-              </th>
-              <th scope="col" style={{ width: 100 }}>
-                Comments
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Uploaded on
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                *Estimated Earning
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {/* Add your table rows here */}
-            <tr>
-              <td>1</td>
-              <td>{thumbnails?.snippet?.title}</td>
-              <td>
-                <img
-                  src={thumbnails?.snippet?.thumbnails?.default?.url}
-                  alt="Thumbnail 1"
-                  style={{ width: 80, height: 60 }}
-                />
-              </td>
-              <td>{thumbnails?.statistics?.viewCount}</td>
-              <td>{thumbnails?.statistics?.likeCount}</td>
-              <td>{thumbnails?.statistics?.commentCount}</td>
-              <td>{date}</td>
-              <td>{earning}</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>{thumbnails?.snippet?.title}</td>
-              <td>
-                <img
-                  src={thumbnails?.snippet?.thumbnails?.default?.url}
-                  alt="Thumbnail 2"
-                  style={{ width: 80, height: 60 }}
-                />
-              </td>
-              <td>{thumbnails?.statistics?.viewCount}</td>
-              <td>{thumbnails?.statistics?.likeCount}</td>
-              <td>{thumbnails?.statistics?.commentCount}</td>
-              <td>{date}</td>
-              <td>{earning}</td>
-            </tr>
-            {/* Add more rows as needed */}
-          </tbody>
-        </table>
-      </div>
+  <table className="table custom-table" style={{ background: "#888", color: "#fff" }}>
+    <thead style={{ textAlign: "center", fontWeight: "bold" }}>
+      <tr style={{ textAlign: "center", fontWeight: "bold" }}>
+        <th scope="col" style={{ width: 50 }}>
+          Rank
+        </th>
+        <th scope="col" style={{ width: 150 }}>
+          Title
+        </th>
+        <th scope="col" style={{ width: 100 }}>
+          Thumbnail
+        </th>
+        <th scope="col" style={{ width: 100 }}>
+          Views
+        </th>
+        <th scope="col" style={{ width: 100 }}>
+          Likes
+        </th>
+        <th scope="col" style={{ width: 100 }}>
+          Comments
+        </th>
+        <th scope="col" style={{ width: 150 }}>
+          Uploaded on
+        </th>
+        <th scope="col" style={{ width: 150 }}>
+          *Estimated Earning
+        </th>
+      </tr>
+    </thead>
+    <tbody style={{ textAlign: "center" }}>
+      {/* Add your table rows here */}
+      <tr>
+        <td style={{ width: 50 }}>1</td>
+        <td style={{ width: 150 }}>{thumbnails?.snippet?.title}</td>
+        <td style={{ width: 100 }}>
+          <img
+            src={thumbnails?.snippet?.thumbnails?.default?.url}
+            alt="Thumbnail 1"
+            style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+          />
+        </td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.viewCount}</td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.likeCount}</td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.commentCount}</td>
+        <td style={{ width: 150 }}>{date}</td>
+        <td style={{ width: 150 }}>{earning}</td>
+      </tr>
+      <tr>
+        <td style={{ width: 50 }}>2</td>
+        <td style={{ width: 150 }}>{thumbnails?.snippet?.title}</td>
+        <td style={{ width: 100 }}>
+          <img
+            src={thumbnails?.snippet?.thumbnails?.default?.url}
+            alt="Thumbnail 2"
+            style={{ width: "100%", height: "auto", borderRadius: "8px" }}
+          />
+        </td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.viewCount}</td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.likeCount}</td>
+        <td style={{ width: 100 }}>{thumbnails?.statistics?.commentCount}</td>
+        <td style={{ width: 150 }}>{date}</td>
+        <td style={{ width: 150 }}>{earning}</td>
+      </tr>
+      {/* Add more rows as needed */}
+    </tbody>
+  </table>
+</div>
+
+
 
 
     </div>

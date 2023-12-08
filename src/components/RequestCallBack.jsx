@@ -42,7 +42,7 @@ const handleClick=()=>{
 
   return (
   <div>
-        <button className="request-call-back-btn"   data-bs-toggle="modal" data-bs-target="#exampleModal">Request a Call Back</button>
+        <button className="request-call-back-btn my=4"   data-bs-toggle="modal" data-bs-target="#exampleModal">Request a Call Back</button>
 {
 
         !success ? 
@@ -53,19 +53,20 @@ const handleClick=()=>{
 <div className="modal-dialog">
   <div className="modal-content">
     <div className="modal-header ">
-      <h5 className="modal-title " id="exampleModalLabel">Request a callback</h5>
+      <h5 className="modal-title mx-1" id="exampleModalLabel">Request a callback</h5>
       <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" />
     </div>
     <div className="modal-body">
-   <div className=" ">
+   <div className="xx ">
 <input required value={name} onChange={(e)=>setName(e.target.value)} type="text" className="form-control" placeholder="Enter Name" aria-label="Username" />
+<br/>
 <input required  value={phone} onChange={(e)=>setPhone(e.target.value)} type="number" className="form-control" placeholder="Enter Number" aria-label="Server" />
 </div>
 
 
     </div>
     <div className="modal-footer">
-      <button type="submit" className="btn btn-primary">Request a  callback</button>
+      <button type="submit" className="btn btn-primary  rounded-pill m-auto ">Request a  callback</button>
     </div>
   </div>
 </div>
