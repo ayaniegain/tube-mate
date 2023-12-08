@@ -23,7 +23,7 @@ function RequestCallBack() {
 
       if (response.ok) {
         setSuccess(true);
-        alert("Email sent successfully!");
+        // alert("Email sent successfully!");
       } else {
         alert("Failed to send email");
       }
